@@ -1,0 +1,25 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+    instance-id: user-service:8083
+
+spring:
+  cloud:
+    config:
+      #应用的名字
+      name: user-service
+      #环境标识
+      profile: dev
+      #默认git分支
+      label: master
+      #配置中心的地址
+      #uri: http://localhost:12000
+      discovery:
+        #开启Eureka的注册的服务的发现
+        enabled: true
+        #在Eureka中注册的配置中心服务端的名字
+        service-id: config
